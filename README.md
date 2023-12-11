@@ -4,24 +4,25 @@ Able to use custom numeral system.
 ## Usage
 ```
 //ex 1
-string s1 = NumeralConverter.Convert(1234, NumeralConverter.NumeralSystem.Binary); //10011010010
-BigInteger n1 = NumeralConverter.Convert("10011010010", NumeralConverter.NumeralSystem.Binary); //1234
+
+ReadOnlyCollection<char> binary = NumeralSystem.Binary.ToList().AsReadOnly(); //cache
+string s1 = NumeralConverter.Convert(1234, binary); //10011010010
+BigInteger n1 = NumeralConverter.Convert("10011010010", binary); //1234
 
 
 //ex 2
-IEnumerable<char> hexatrigesimalGenerator()
+
+List<char> hexatrigesimal = new();
+
+foreach(int i in Enumerable.Range(0, 10))
 {
-    for (int i = 0; i <= 9; i++)
-    {
-        yield return i.ToString()[0];
-    }
-    for (char c = 'A'; c <= 'Z'; c++)
-    {
-        yield return c;
-    }
+    hexatrigesimal.Add(i.ToString()[0]);
 }
 
-IEnumerable<char> hexatrigesimal = hexatrigesimalGenerator();
+for (char c = 'A'; c <= 'Z'; c++)
+{
+    hexatrigesimal.Add(c);
+}
 
 string s2 = NumeralConverter.Convert(9999, hexatrigesimal); //7PR
 BigInteger n2 = NumeralConverter.Convert("7PR", hexatrigesimal.ToList()); //9999

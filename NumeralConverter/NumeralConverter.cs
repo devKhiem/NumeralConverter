@@ -104,20 +104,5 @@ namespace khiemnguyen.dev.utility
 
             throw new ArgumentOutOfRangeException($"Can not find item with value '{value}'");
         }
-
-        public static class NumeralSystem
-        {
-            //[0-1]
-            public static readonly char[] Binary = new char[2] { '0', '1' };
-
-            //[0-7]
-            public static readonly char[] Octal = new char[8] { '0', '1', '2', '3', '4', '5', '6', '7' };
-
-            //[0-9]
-            public static readonly char[] Decimal = new char[10] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9' };
-
-            //[0-9A-F]
-            public static readonly char[] Hexadecimal = new char[16] { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F' };
-        }
     }
 }
