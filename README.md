@@ -1,5 +1,5 @@
 # Numeral Converter
-Convert decimal to other numeral system and vice versa.
+Convert decimal to other numeral system and vice versa.<br>
 Able to use custom numeral system.
 ## Usage
 ```
@@ -25,9 +25,9 @@ for (char c = 'A'; c <= 'Z'; c++)
 }
 
 string s2 = NumeralConverter.Convert(9999, hexatrigesimal); //7PR
-BigInteger n2 = NumeralConverter.Convert("7PR", hexatrigesimal.ToList()); //9999
+BigInteger n2 = NumeralConverter.Convert("7PR", hexatrigesimal); //9999
 ```
 ## Note
-Don't use negative number.
-Array item or List item must not be duplicated.
+Don't use negative number.<br>
+Array item or List item must not be duplicated.<br>
 When converting a string sequence to decimal number, the letters in the string must exist in the array.
